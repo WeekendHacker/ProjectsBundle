@@ -16,7 +16,7 @@ namespace WeekendHacker\ProjectsBundle\Test\Model;
  *
  * @author Miguel Perez  <miguel@mlpz.com>
  */
-class ProjectTest
+class ProjectTest extends \PHPUnit_TestCase
 {
 
     public function testId()

@@ -11,12 +11,14 @@
 
 namespace WeekendHacker\ProjectsBundle\Test\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
 /**
  * Test project bundle controller
  *
  * @author Miguel Perez  <miguel@mlpz.com>
  */
-class ProjectControllerTest
+class ProjectControllerTest  extends WebTestCase
 {
 
     public function testIndex()
