@@ -19,22 +19,13 @@ namespace WeekendHacker\ProjectsBundle\Test\Model;
 class ProjectTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function testId()
-    {
-        $id = $this->getProjects();
-        $this->assertNull($id->getId());
-
-        $Id->setId(1);
-        $this->assertEquals(1, $id->geId());
-    }
-
-    public function testuserID()
+    public function testuserId()
     {
         $userid = $this->getProjects();
         $this->assertNull($userid->getUserId());
 
         $userid->setUserId(1);
-        $this->asserEquals(1, $userid->getUserId());
+        $this->assertEquals(1, $userid->getUserId());
     }
 
     public function testTitle()
@@ -49,10 +40,10 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
     public function testSlug()
     {
         $slug = $this->getProjects();
-        $this->assertNull($title->getSlug());
+        $this->assertNull($slug->getSlug());
 
         $slug->setSlug('WH-Project-1');
-        $this->assertEquals('WH-Project-1', $title->getSlug());
+        $this->assertEquals('WH-Project-1', $slug->getSlug());
     }
 
     public function testDescription()
@@ -75,17 +66,19 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
         $text = "I could really use the help of a designer to make the table views look better than the stock ones
             , help me create a logo and and icon for the app itself.";
         $need->setNeed($text);
-        $this->assertEquals($description, $need->getNeed());
+        $this->assertEquals($text, $need->getNeed());
     }
 
     public function testSkillsNeeded()
     {
-        $skillneeded = $this->getProjects();
-        $this->assertNull($skillneeded->getSkillNeeded());
+        $skillsneeded = $this->getProjects();
+$this->assertNull($skillsneeded->getSkillsNeeded());
 
-        $text = array('design', 'development');
-        $skillneeded->setSkillNeeded($text);
-        $this->assertEquals($text, $skillneeded->getSkillNeeded());
+        $text = array();
+        $text[] = 'ajax';
+        $text[] =  'php';
+        $skillsneeded->setSkillsNeeded($text);
+        $this->assertEquals(2,sizeof($skillsneeded->getSkillsNeeded()));
     }
 
     public function testGiveBack()
@@ -104,8 +97,8 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($helpers->getHelpers());
 
         $text = array('Miguel Perez', 'Thomas Petersen');
-        $helpers->setHelper($text);
-        $this->assertEquals($text, $helpers->getHelpers);
+        $helpers->setHelpers($text);
+        $this->assertEquals($text, $helpers->getHelpers());
     }
 
     public function testActive()
