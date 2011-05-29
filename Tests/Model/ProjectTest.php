@@ -72,13 +72,13 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
     public function testSkillsNeeded()
     {
         $skillsneeded = $this->getProjects();
-$this->assertNull($skillsneeded->getSkillsNeeded());
+        $this->assertNull($skillsneeded->getSkillsNeeded());
 
         $text = array();
         $text[] = 'ajax';
-        $text[] =  'php';
+        $text[] = 'php';
         $skillsneeded->setSkillsNeeded($text);
-        $this->assertEquals(2,sizeof($skillsneeded->getSkillsNeeded()));
+        $this->assertEquals(2, sizeof($skillsneeded->getSkillsNeeded()));
     }
 
     public function testGiveBack()
